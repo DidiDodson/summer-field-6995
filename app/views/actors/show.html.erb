@@ -1,2 +1,11 @@
 <h1><%= @actor.name %></h1>
 Age: <%= @actor.age %>
+<hr>
+Co-actors:
+<section id="coactors">
+  <% @actor.movies.each do |movie| %>
+    <% movie.actors.each do |actor| %>
+      <%= actor.name %><br>
+    <% end %>
+  <% end %>
+</section>

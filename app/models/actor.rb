@@ -9,4 +9,9 @@ class Actor < ApplicationRecord
   def self.average_age
     self.all.average(:age)
   end
+
+  def coactor
+    #ugh!! just feel like I was right on the edge of getting this to work!
+    @coactor = self.movies.references(:movie_actors).where(movie_actors.movie_id)
+  end
 end
